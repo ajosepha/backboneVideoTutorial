@@ -16,6 +16,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
   <script>
+
+
+
+    var UserList = Backbone.View.extend({
+      el: '.page'
+    })
+
+
+    
     var Router = Backbone.Router.extend({
       routes: {
         "":"home"
