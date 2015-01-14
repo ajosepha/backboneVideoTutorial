@@ -20,21 +20,29 @@
 
 
     var UserList = Backbone.View.extend({
-      el: '.page'
-    })
+      el: '.page',
+      render: function(){
+        this.$el.html("Content should show here")
+      }
+
+    });
 
 
-    
+
     var Router = Backbone.Router.extend({
       routes: {
         "":"home"
       }
     });
+    var userList = new UserList
     var router = new Router();
     router.on('route:home', function(){
+      userList.render();
       console.log("we have loaded the home page")
 
     });
+
+
     Backbone.history.start();
   </script>
 </body>
