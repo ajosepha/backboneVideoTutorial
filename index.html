@@ -16,7 +16,7 @@
 
   <script type="text/template" id="user-list-template">
 
-    <a href="#/new" class="btn btn-primary"> New user</a>
+    <a href="#/new" class="btn btn-primary"> New User</a>
     <br/>
     <table class="table striped">
       <thead>
@@ -80,23 +80,35 @@
 
     });
 
+    var EditUser = Backbone.View.extend({
+      el: '.page',
+      render: function(){
+        this.$el.html('Show the form here')
+      }
+    })
+
 
 
     var Router = Backbone.Router.extend({
       routes: {
         '':'home',
-        'new':'editUser'
+        'new': 'editUser'
       }
     });
-    var userList = new UserList
+    var userList = new UserList();
+    var editUser = new EditUser();
+
+
     var router = new Router();
+
     router.on('route:home', function(){
       userList.render();
 
     });
 
     router.on('route:editUser', function(){
-      console.log("show userform")
+      console.log("show user form")
+      editUser.render();
 
     });
 
