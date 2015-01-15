@@ -93,6 +93,10 @@
       url: '/users'
     });
 
+    var User = Backbone.Model.extend({
+      urlRoot: '/users'
+    });
+
     var UserList = Backbone.View.extend({
       el: '.page',
       render: function(){
@@ -121,7 +125,14 @@
       },
       saveUser: function(ev){
         var userDetails = $(ev.currentTarget).serializeObject();
-        console.log(userDetails);
+        var user = new User();
+        user.save(userDetails, {
+          success: function(user){
+           console.log(user)
+           router.navigate('', {trigger: true})
+          }
+        });
+        // console.log(userDetails);
         return false;
       }
       
