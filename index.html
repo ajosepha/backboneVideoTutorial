@@ -43,6 +43,19 @@
 
     </table>
   </script>
+  <script type="text/template" id="edit-user-template">
+    <form class="edit-user-form">
+      <legend>Create User</legend>
+      <label>First Name</label>
+      <input type="text" name="firstname" />
+      <label>Last Name</label>
+      <input type="text" name="lastname" />
+      <label>Age</label>
+      <input type="text" name="age" />
+      <br/>
+      <button type = "submit" class="btn">Create User </button>
+    </form>
+  </script>
 
 
 
@@ -83,7 +96,9 @@
     var EditUser = Backbone.View.extend({
       el: '.page',
       render: function(){
-        this.$el.html('Show the form here')
+        // this.$el.html('Show the form here')
+        var template = _.template($('#edit-user-template').html())
+        this.$el.html(template);
       }
     })
 
