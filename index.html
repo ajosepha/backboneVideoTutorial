@@ -53,7 +53,7 @@
       <label>Age</label>
       <input type="text" name="age" value = "<%= user ? user.get('age') : '' %>"/>
       <br/>
-      <button type = "submit" class="btn">Create User </button>
+      <button type = "submit" class="btn"><%= user ? 'Update' : 'Create' %></button>
     </form>
   </script>
 
