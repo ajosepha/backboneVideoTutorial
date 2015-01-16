@@ -16,7 +16,7 @@
 
   <script type="text/template" id="user-list-template">
 
-    <a href="#/new" class="btn btn-primary"> New User</a>
+    <a href="#/new" class="btn btn-primary">New User</a>
     <br/>
     <table class="table striped">
       <thead>
@@ -45,7 +45,7 @@
   </script>
   <script type="text/template" id="edit-user-template">
     <form class="edit-user-form">
-      <legend>User</legend>
+      <legend><%= user? "Update" : "New" %> User</legend>
       <label>First Name</label>
       <input type="text" name="firstname" />
       <label>Last Name</label>
@@ -123,7 +123,7 @@
             success: function(user){
               var template = _.template($('#edit-user-template').html())
               that.$el.html(template({user: user}));
-              console.log("old user")
+              console.log(user)
             }
           })
         }
